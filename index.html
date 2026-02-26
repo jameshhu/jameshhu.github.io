@@ -50,22 +50,50 @@
             transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
             transition-duration: 200ms;
         }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Offset anchors for fixed navbar */
+        section[id], div[id="about"] {
+            scroll-margin-top: 5rem;
+        }
+
+        /* Active nav link */
+        .nav-link.active {
+            color: #0284c7;
+        }
+        .dark .nav-link.active {
+            color: #00d2ff;
+        }
     </style>
 </head>
 <body class="bg-white dark:bg-darkbg text-gray-800 dark:text-[#d1d5db] selection:bg-accent-light selection:text-white dark:selection:bg-accent-dark dark:selection:text-black">
 
-    <!-- Theme Toggle Button -->
-    <div class="fixed top-6 right-6 md:top-8 md:right-8 z-50">
-        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none rounded-lg text-sm p-2.5">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-        </button>
-    </div>
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-darkbg/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-4xl mx-auto px-6 flex items-center justify-between h-14">
+            <a href="#" class="text-lg font-bold tracking-tight text-black dark:text-[#f3f4f6] hover:text-accent-light dark:hover:text-accent-dark">James Hu</a>
+            <div class="flex items-center gap-1">
+                <a href="#about" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent-light dark:hover:text-accent-dark hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+                <a href="#research" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent-light dark:hover:text-accent-dark hover:bg-gray-100 dark:hover:bg-gray-800">Research</a>
+                <a href="#education" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent-light dark:hover:text-accent-dark hover:bg-gray-100 dark:hover:bg-gray-800">Education</a>
+                <a href="#experience" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent-light dark:hover:text-accent-dark hover:bg-gray-100 dark:hover:bg-gray-800">Experience</a>
+                <a href="#skills" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent-light dark:hover:text-accent-dark hover:bg-gray-100 dark:hover:bg-gray-800">Skills</a>
+                <button id="theme-toggle" type="button" class="ml-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
 
-    <main class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+    <main class="max-w-4xl mx-auto px-6 pt-24 pb-16 md:pt-28 md:pb-24">
         
         <!-- Header & Bio Section -->
-        <div class="flex flex-col-reverse md:flex-row gap-10 md:gap-16 items-start">
+        <div id="about" class="flex flex-col-reverse md:flex-row gap-10 md:gap-16 items-start">
             
             <!-- Left Text Content -->
             <div class="flex-1">
@@ -106,8 +134,43 @@
 
         <hr class="border-gray-200 dark:border-gray-800 my-12">
 
+        <!-- Research Section -->
+        <section id="research" class="mb-12">
+            <h2 class="text-xl font-bold mb-6 tracking-tight text-black dark:text-[#f3f4f6]">Research</h2>
+            <div class="space-y-8 text-[15px]">
+
+                <!-- Research Area 1 -->
+                <div>
+                    <h3 class="font-semibold text-gray-900 dark:text-gray-200 mb-1">Photonic &amp; Quantum Chip Simulation</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">University of Michigan &middot; Quantum Engineering Lab</p>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Conducting high-fidelity photonics and quantum chip simulations using <span class="text-accent-light dark:text-accent-dark">Tidy3D</span> (FDTD solver) to optimize device performance parameters including insertion loss, coupling efficiency, and mode confinement. Managing the full hardware testing pipeline from chip setup to data acquisition, and processing experimental results with Python to identify key performance metrics for iterative hardware design.
+                    </p>
+                </div>
+
+                <!-- Research Area 2 -->
+                <div>
+                    <h3 class="font-semibold text-gray-900 dark:text-gray-200 mb-1">Dual-Wavelength Mirrorless Laser in Hot Rubidium Vapor</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">Peking University &middot; Institute of Quantum Electronics</p>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Conducted 420 nm-pumped hot-rubidium vapor experiments toward realizing a dual-wavelength mirrorless laser. Performed free-space optical alignment and system calibration (polarization control, beam delivery), and implemented pump frequency stabilization using Modulation Transfer Spectroscopy (MTS).
+                    </p>
+                </div>
+
+                <!-- Research Area 3 -->
+                <div>
+                    <h3 class="font-semibold text-gray-900 dark:text-gray-200 mb-1">Variational Quantum Algorithms &amp; Neural-Network Quantum States</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-500 mb-2">Peking University &middot; Prof. Xiao Yuan's Group</p>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Developed and optimized Variational Quantum Algorithms (VQA) and neural-network quantum states using <span class="text-accent-light dark:text-accent-dark">PyTorch</span>. Implemented Restricted Boltzmann Machine (RBM) models for quantum state approximation and conducted Variational Monte Carlo (VMC) simulations to study quantum many-body systems.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
         <!-- Education Section -->
-        <section class="mb-12">
+        <section id="education" class="mb-12">
             <h2 class="text-xl font-bold mb-6 tracking-tight text-black dark:text-[#f3f4f6]">Education</h2>
             <div class="space-y-4 text-[15px]">
                 <div class="flex flex-col md:flex-row justify-between md:items-baseline">
@@ -128,7 +191,7 @@
         </section>
 
         <!-- Experience Section -->
-        <section class="mb-12">
+        <section id="experience" class="mb-12">
             <h2 class="text-xl font-bold mb-6 tracking-tight text-black dark:text-[#f3f4f6]">Experience</h2>
             <div class="space-y-8 text-[15px]">
                 
@@ -189,7 +252,7 @@
         </section>
 
         <!-- Skills Section -->
-        <section>
+        <section id="skills">
             <h2 class="text-xl font-bold mb-4 tracking-tight text-black dark:text-[#f3f4f6]">Skills</h2>
             <p class="text-[15px] text-gray-700 dark:text-gray-300">
                 <span class="text-accent-light dark:text-accent-dark">Tidy3D</span>, Python (<span class="text-accent-light dark:text-accent-dark">PyTorch</span>, NumPy), C, SQL, LaTeX, Origin
@@ -246,6 +309,27 @@
                 }
             }
         });
+    </script>
+
+    <!-- Script for Active Nav Highlighting -->
+    <script>
+        const sections = document.querySelectorAll('section[id], div[id="about"]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+
+        sections.forEach(section => observer.observe(section));
     </script>
 
 </body>
